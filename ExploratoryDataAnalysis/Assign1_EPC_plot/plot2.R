@@ -7,6 +7,15 @@
 #########################################################################################################
 
 
+            #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#
+            #                                               #
+            #       For re-use and performance matters      #
+            #       The script: ReadDATAandPLOTS.R          #
+            #       is the main program and contains        #
+            #       the code to read the data               #
+            #                                               #
+            #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#
+
 
 '*********************************************************************************
 Name ......... : plot2
@@ -39,8 +48,7 @@ plot2 <- function(subDFtoto)
                 lty=1               # Line type: 0=blank, 1=solid, 2=dashed, 3=dotted, 4=dotdash, 5=longdash, 6=twodash 
             ) 
         )
-
-
-dev.off()  ## Don't forget to close the PNG device!
+       
+    dev.off()  ## Don't forget to close the PNG device!
 
 }

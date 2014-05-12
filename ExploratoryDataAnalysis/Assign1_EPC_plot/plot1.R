@@ -7,6 +7,15 @@
 #########################################################################################################
 
 
+        #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#
+        #                                               #
+        #       For re-use and performance matters      #
+        #       The script: ReadDATAandPLOTS.R          #
+        #       is the main program and contains        #
+        #       the code to read the data               #
+        #                                               #
+        #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#
+
 
 '*********************************************************************************
 Name ......... : plot1
@@ -24,7 +33,7 @@ plot1 <- function(subDFtoto)
 {
     png( 
         filename = "plot1.png",
-        width = 480, 
+        width  = 480, 
         height = 480, 
         units = "px",
         bg = "white"

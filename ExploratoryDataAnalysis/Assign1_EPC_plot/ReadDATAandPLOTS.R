@@ -34,11 +34,11 @@ readDATA <- function()
                          na.strings = "?",
                          comment.char = "",
                          nrows = 2075259 )
-    #transform the vearaible 'Date' to date data type
-    DFtoto$Date <- as.Date(DFtoto$Date, format = "%d/%m/%Y")
-    #Subset the data
-    subDFtoto <- subset(DFtoto, DFtoto$Date =="2007-02-01" | DFtoto$Date =="2007-02-02")
-    #create a new varaible 'Datetime'
+    
+    #step1: Subset the data
+    subDFtoto <- subset(DFtoto, 
+                        as.Date(DFtoto$Date, format = "%d/%m/%Y") =="2007-02-01" | as.Date(DFtoto$Date, format = "%d/%m/%Y") =="2007-02-02")
+    #step2: create a new variable 'Datetime'
     subDFtoto$datetime <- strptime(paste(subDFtoto$Date, subDFtoto$Time), format = "%d/%m/%Y %H:%M:%S")
     
     #SAve the dataset in the global env
@@ -68,10 +68,7 @@ if ( !exists("tidydata", envir=globalenv()) )
 print("--- Step 2 ---")
 #step 2
 userInput <- readline("Which Plot [1 - 4] to you want to generate?  ")
-if ( userInput == 1 ) { plot1(tidydata) } 
-else if ( userInput == 2 ) { plot2(tidydata) } 
-else if ( userInput == 3 ) { plot3(tidydata) } 
-else plot4(tidydata) 
-print("The files is created")
+if ( userInput == 1 ) { plot1(tidydata) } else if ( userInput == 2 ) { plot2(tidydata) } else if ( userInput == 3 ) { plot3(tidydata) } else { plot4(tidydata) }
+print("The file is created")
 #print("The files: plot" & as.character(userInput) & ".png is created")
 
